@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 
 const Formulaire = (props) => {
     const longueurMax = 130;
@@ -18,15 +17,7 @@ const Formulaire = (props) => {
 
     const handleSbmit = (e) => {
         e.preventDefault();
-        axios.post("https://api-boite-idee.herokuapp.com/api/idee/",
-            {titre:titre, description:contenuSaisi, statut:true},
-            {
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'X-Requested-With': 'XMLHttpRequest',
-                }
-            }
-        )
+        console.log(titre, contenuSaisi);
     }
 
     return(
